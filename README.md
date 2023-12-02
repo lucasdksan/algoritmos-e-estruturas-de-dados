@@ -19,3 +19,16 @@ As operações fundamentais em uma pilha incluem "push" para adicionar um elemen
 Pilhas são frequentemente usadas em situações em que a ordem de processamento é essencial. Por exemplo, ao avaliar expressões matemáticas, as pilhas podem ser utilizadas para inverter a ordem dos operandos e operadores para facilitar a computação.
 
 Outra aplicação comum é no rastreamento de chamadas de funções. Cada vez que uma função é chamada, seu estado é empilhado, e quando a função é concluída, seu estado é removido da pilha. Isso permite que o programa retorne à função anterior, mantendo um controle eficiente do fluxo de execução.
+
+## Filas 🚶🚶🚶🚶
+
+Coleção ordenada de itens que segue o princípio FIFO(First In First Out), ou seja, o primeiro a entrar é o primeiro a sair. Um bom exemplo é uma fila de pessoas aguardando alguma coisa, o primeiro que chega é sempre o primeiro que sai. 
+
+Operações Básicas:
+
+* Enfileirar (enqueue): Adiciona um elemento ao final da fila.
+* Desenfileirar (dequeue): Remove o elemento do início da fila.
+* Frente (front): Retorna o elemento no início da fila sem removê-lo.
+* Vazia (empty): Verifica se a fila está vazia.
+
+As filas podem ser implementadas usando estruturas de dados como arrays ou listas encadeadas. Cada operação básica pode ser traduzida em operações específicas para a estrutura escolhida.
