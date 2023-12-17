@@ -75,3 +75,5 @@ Não é necessário especificar o tamanho da lista antecipadamente.
 
 Acesso aos elementos é menos eficiente do que em arrays, pois requer percorrer a lista.
 Ocupam mais espaço na memória devido aos ponteiros adicionais.
+
+## Listas Duplamente Ligadas 🚂🚂

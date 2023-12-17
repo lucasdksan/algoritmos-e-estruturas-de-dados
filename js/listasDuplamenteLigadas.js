@@ -1,11 +1,13 @@
-function LinkedList() {
+function DoublyLinkedList() {
     this.Node = function (element) {
         this.element = element;
         this.next = null;
+        this.prev = null;
     }
 
     this.length = 0;
     this.head = null;
+    this.tail = null;
 
     this.append = function (element) {
         var node = new this.Node(element),
@@ -159,9 +161,9 @@ function LinkedList() {
 }
 
 
-const ll = new LinkedList();
+const dll = new DoublyLinkedList();
 const arr = ["Lucas", "Aline", "Leonardo", "Alda"];
 
 arr.forEach((name)=>{
-    ll.append(name);
+    dll.append(name);
 });
