@@ -39,10 +39,9 @@ Filas com prioridade são uma extensão das filas tradicionais, onde cada elemen
 
 ## Listas Ligadas 🚂
 
-Coleção sequencial de elementos, mas diferente dos arrays, não são alocados de forma contígua na memória. Cada elemento é construído de um nó, que armazena tanto o valor como uma referência ao próximo elemento (ponteiro).
+A coleção sequencial de elementos, conhecida como lista ligada, se diferencia dos arrays pelo fato de não ser alocada de forma contígua na memória. Em uma lista ligada, cada elemento é encapsulado por um nó que armazena tanto o valor desse elemento quanto uma referência ao próximo elemento, estabelecendo uma estrutura de ponteiros. Ao contrário dos arrays, nos quais os elementos são armazenados em posições de memória contíguas, os nós das listas ligadas podem ocupar espaços dispersos na memória, sendo interconectados por meio dessas referências.
 
-
-Uma lista ligada (linked list) é uma estrutura de dados linear na qual elementos são armazenados em nós, e cada nó possui um ponteiro que aponta para o próximo nó na sequência. Diferentemente de arrays, onde os elementos são armazenados em posições de memória contíguas, em listas ligadas, os nós podem estar dispersos na memória e são conectados por meio de ponteiros.
+Para visualizar melhor, podemos imaginar a memória RAM como uma sequência de bytes. Na lista ligada, essa sequência é utilizada de maneira flexível, permitindo que os nós sejam distribuídos de forma não contígua, conforme necessário. Essa abordagem proporciona uma maior flexibilidade na gestão da memória, embora a navegação pela lista exija o uso dos ponteiros para percorrer os elementos encadeados. Essa característica torna as listas ligadas uma estrutura de dados versátil em situações em que a alocação contígua de memória pode ser limitante.
 
 Existem vários tipos de listas ligadas, mas as duas principais categorias são:
 
@@ -77,3 +76,59 @@ Acesso aos elementos é menos eficiente do que em arrays, pois requer percorrer 
 Ocupam mais espaço na memória devido aos ponteiros adicionais.
 
 ## Listas Duplamente Ligadas 🚂🚂
+
+Uma lista duplamente ligada é uma estrutura de dados que consiste em elementos chamados nós, onde cada nó contém dados e duas referências (ponteiros) que apontam para o nó anterior e o próximo na sequência. Essa característica bidirecional oferece vantagens em termos de manipulação eficiente da lista em comparação com listas simplesmente ligadas.
+
+*Características Principais:*
+
+1. Nós Duplamente Ligados:
+
+* Cada nó em uma lista duplamente ligada contém dois ponteiros: um para o nó anterior (prev) e outro para o próximo nó (next).
+
+* Isso permite a navegação em ambas as direções, simplificando operações como a remoção de um nó sem a necessidade de percorrer toda a lista.
+
+2. Inserção e Remoção Eficientes:
+
+* A inserção e remoção de nós em uma lista duplamente ligada são mais eficientes em comparação com listas simplesmente ligadas.
+* Para inserir ou remover um nó, apenas ajusta-se os ponteiros próximo e anterior, sem a necessidade de percorrer a lista inteira.
+
+3. Acesso Aleatório:
+
+* Ao contrário de listas simplesmente ligadas, as listas duplamente ligadas oferecem acesso bidirecional aos elementos, facilitando o acesso direto a um nó específico.
+
+* Isso é particularmente útil em operações que envolvem navegação reversa na lista.
+
+4. Uso Eficiente de Memória:
+
+* Embora as listas duplamente ligadas usem mais memória devido aos ponteiros adicionais, elas proporcionam uma flexibilidade significativa em termos de manipulação de elementos.
+* A capacidade de acessar elementos em ambas as direções pode superar a desvantagem de uso de memória em determinados contextos.
+
+*Operações Comuns em Listas Duplamente Ligadas:*
+
+1. Inserção:
+
+* Inserir um novo nó geralmente envolve ajustar os ponteiros prev e next do nó anterior e próximo, respectivamente.
+
+2. Remoção:
+
+* Remover um nó envolve ajustar os ponteiros prev e next do nó anterior e próximo para ignorar o nó a ser removido.
+
+3. Navegação:
+
+* A navegação pode ocorrer tanto do início para o fim quanto do fim para o início, graças aos ponteiros bidirecionais.
+
+4. Pesquisa:
+
+* A pesquisa em uma lista duplamente ligada pode ser mais eficiente em comparação com uma lista simplesmente ligada, especialmente quando se trata de pesquisas reversas.
+
+*Desvantagens:*
+
+1. Uso de Memória:
+
+* O uso de dois ponteiros por nó aumenta o consumo de memória em comparação com listas simplesmente ligadas.
+
+2. Complexidade:
+
+* A implementação e manutenção de listas duplamente ligadas podem ser mais complexas do que listas simplesmente ligadas devido à necessidade de gerenciar dois ponteiros para cada nó.
+
+Em resumo, as listas duplamente ligadas oferecem eficiência em termos de inserção, remoção e navegação bidirecional, mas essa eficiência vem com o custo de um maior consumo de memória e complexidade na implementação. A escolha entre listas simplesmente e duplamente ligadas depende das necessidades específicas do problema e das operações frequentemente realizadas na estrutura de dados.

@@ -87,20 +87,6 @@ function LinkedList() {
         return this.head.element;
     }
 
-    this.getTail = function(){
-        var current = this.head;
-
-        for(var index = 0; index <= this.size() - 1; index++){
-            if(index === this.size() -1) {
-                return current.element;
-            }
-
-            current = current.next;
-        }
-
-        return -1;
-    }
-
     this.getElement = function (position){
         var current = this.head;
 

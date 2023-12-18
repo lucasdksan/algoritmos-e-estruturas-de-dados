@@ -11,33 +11,49 @@ function DoublyLinkedList() {
 
     this.append = function (element) {
         var node = new this.Node(element),
-            current;
+            current,
+            previous;
 
         if (this.head === null) {
             this.head = node;
         } else {
             current = this.head;
+            previous = current;
 
             while (current.next != null) {
                 current = current.next;
+                previous = current;
             }
 
             current.next = node;
+            node.prev = previous;
+            this.tail = node;
         }
 
         this.length++;
     }
 
     this.insert = function (position, element) {
-        if (position >= 0 && position < this.length) {
-            var node = new this.Node(element),
-            current = this.head,
-            previous,
-            index = 0;
+        var node = new this.Node(element),
+        current = this.head,
+        previous,
+        index = 0;
 
-            if(position === 0){
-                node.next = current;
-                this.head = node;
+        if (position >= 0 && position < this.length) {
+            if(position ===0) {
+                if(!this.head){
+                    this.head = node;
+                    this.tail = node;
+                } else {
+                    node.next = current;
+                    current.prev = node;
+                    this.head = node;
+                }
+            } else if(position === this.length){
+                current = this.tail;
+                current.next = node;
+                node.prev = current;
+                this.tail = node;
             } else {
                 while(index++ < position){
                     previous = current;
@@ -45,10 +61,13 @@ function DoublyLinkedList() {
                 }
 
                 node.next = current;
-                previous.next = node
+                previous.next = node;
+                current.prev = node;
+                node.prev = previous;
             }
 
             this.length++;
+
             return true;
         } else {
             return false;
@@ -92,8 +111,8 @@ function DoublyLinkedList() {
     this.getTail = function(){
         var current = this.head;
 
-        for(var index = 0; index <= this.size() - 1; index++){
-            if(index === this.size() -1) {
+        for(var index = 0; index <= this.length - 1; index++){
+            if(index === this.length -1) {
                 return current.element;
             }
 
