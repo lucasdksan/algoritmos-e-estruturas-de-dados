@@ -1,33 +1,33 @@
 function Queue() {
-    this.items = [];
+    var items = [];
 
     this.enqueue = function (element) {
-        this.items.push(element);
+        items.push(element);
     }
 
     this.dequeue = function () {
-        return this.items.shift()
+        return items.shift()
     }
 
     this.front = function () {
-        return this.items[0];
+        return items[0];
     }
 
     this.isEmpty = function () {
-        return this.items.length === 0;
+        return items.length === 0;
     }
 
     this.size = function () {
-        return this.items.length;
+        return items.length;
     }
 
     this.print = function () {
-        console.log(this.items.toString());
+        console.log(items.toString());
     }
 }
 
 function PriorityQueue() {
-    this.items = [];
+    var items = [];
 
     function QueueElement(element, priority) {
         this.element = element;
@@ -38,26 +38,26 @@ function PriorityQueue() {
         var queueElement = new QueueElement(element, priority);
         var added = false;
 
-        for (var i = 0; i < this.items.length; i++) {
-            if (queueElement.priority < this.items[i].priority) {
-                this.items.splice(i, 0, queueElement);
+        for (var i = 0; i < items.length; i++) {
+            if (queueElement.priority < items[i].priority) {
+                items.splice(i, 0, queueElement);
                 added = true;
                 break;
             }
         }
 
         if (!added) {
-            this.items.push(queueElement);
+            items.push(queueElement);
         }
     }
 
     this.dequeue = function () {
-        return this.items.shift();
+        return items.shift();
     }
 
     this.print = function(){
-        for(var i = 0; i < this.items.length; i++){
-            console.log(this.items[i].element + " " + this.items[i].priority);
+        for(var i = 0; i < items.length; i++){
+            console.log(items[i].element + " " + items[i].priority);
         }
     }
 }

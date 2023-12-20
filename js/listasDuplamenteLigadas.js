@@ -1,23 +1,23 @@
 function DoublyLinkedList() {
-    this.Node = function (element) {
+    var Node = function (element) {
         this.element = element;
         this.next = null;
         this.prev = null;
     }
 
-    this.length = 0;
-    this.head = null;
-    this.tail = null;
+    var length = 0;
+    var head = null;
+    var tail = null;
 
     this.append = function (element) {
-        var node = new this.Node(element),
+        var node = new Node(element),
             current,
             previous;
 
-        if (this.head === null) {
-            this.head = node;
+        if (head === null) {
+            head = node;
         } else {
-            current = this.head;
+            current = head;
             previous = current;
 
             while (current.next != null) {
@@ -27,33 +27,33 @@ function DoublyLinkedList() {
 
             current.next = node;
             node.prev = previous;
-            this.tail = node;
+            tail = node;
         }
 
-        this.length++;
+        length++;
     }
 
     this.insert = function (position, element) {
-        var node = new this.Node(element),
-        current = this.head,
+        var node = new Node(element),
+        current = head,
         previous,
         index = 0;
 
-        if (position >= 0 && position < this.length) {
+        if (position >= 0 && position < length) {
             if(position ===0) {
-                if(!this.head){
-                    this.head = node;
-                    this.tail = node;
+                if(!head){
+                    head = node;
+                    tail = node;
                 } else {
                     node.next = current;
                     current.prev = node;
-                    this.head = node;
+                    head = node;
                 }
-            } else if(position === this.length){
-                current = this.tail;
+            } else if(position === length){
+                current = tail;
                 current.next = node;
                 node.prev = current;
-                this.tail = node;
+                tail = node;
             } else {
                 while(index++ < position){
                     previous = current;
@@ -66,7 +66,7 @@ function DoublyLinkedList() {
                 node.prev = previous;
             }
 
-            this.length++;
+            length++;
 
             return true;
         } else {
@@ -75,23 +75,34 @@ function DoublyLinkedList() {
     }
 
     this.removeAt = function (position) {
-        if (position > -1 && position < this.length) {
-            var current = this.head,
-                previous,
-                index = 0;
+        if (position > -1 && position < length) {
+            var current = head,
+            previous,
+            index = 0;
 
-            if (position === 0) {
-                this.head = current.next;
+            if(position === 0){
+                head = current.next;
+
+                if(length === 1){
+                    tail = null;
+                } else {
+                    head.prev = null;
+                }
+            } else if(position === length) {
+                current = tail;
+                tail = current.prev;
+                tail.next = null;
             } else {
-                while (index++ < position) {
+                while(index++ < position) {
                     previous = current;
                     current = current.next;
                 }
 
-                previous.next = current.next
+                previous.next = current.next;
+                current.next = previous
             }
-            this.length--;
 
+            length--;
             return current.element;
         } else {
             return null;
@@ -105,25 +116,15 @@ function DoublyLinkedList() {
     }
 
     this.getHead = function (){
-        return this.head.element;
+        return head;
     }
 
     this.getTail = function(){
-        var current = this.head;
-
-        for(var index = 0; index <= this.length - 1; index++){
-            if(index === this.length -1) {
-                return current.element;
-            }
-
-            current = current.next;
-        }
-
-        return -1;
+        return tail;
     }
 
     this.getElement = function (position){
-        var current = this.head;
+        var current = head;
 
         if (position >= 0 && position < this.size()) {
             for(var index = 0; index <= position; index++){
@@ -139,7 +140,7 @@ function DoublyLinkedList() {
     }
 
     this.indexOf = function (element) {
-        var current = this.head,
+        var current = head,
         index = 0;
 
         while(current) {
@@ -155,15 +156,15 @@ function DoublyLinkedList() {
     }
 
     this.isEmpty = function () {
-        return this.length === 0;
+        return length === 0;
     }
 
     this.size = function () {
-        return this.length;
+        return length;
     }
 
     this.toString = function () {
-        var current = this.head,
+        var current = head,
             string = "";
 
         while (current) {

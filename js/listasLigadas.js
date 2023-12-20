@@ -1,20 +1,20 @@
 function LinkedList() {
-    this.Node = function (element) {
+    var Node = function (element) {
         this.element = element;
         this.next = null;
     }
 
-    this.length = 0;
-    this.head = null;
+    var length = 0;
+    var head = null;
 
     this.append = function (element) {
-        var node = new this.Node(element),
+        var node = new Node(element),
             current;
 
-        if (this.head === null) {
-            this.head = node;
+        if (head === null) {
+            head = node;
         } else {
-            current = this.head;
+            current = head;
 
             while (current.next != null) {
                 current = current.next;
@@ -23,19 +23,19 @@ function LinkedList() {
             current.next = node;
         }
 
-        this.length++;
+        length++;
     }
 
     this.insert = function (position, element) {
-        if (position >= 0 && position < this.length) {
-            var node = new this.Node(element),
-            current = this.head,
+        if (position >= 0 && position < length) {
+            var node = new Node(element),
+            current = head,
             previous,
             index = 0;
 
             if(position === 0){
                 node.next = current;
-                this.head = node;
+                head = node;
             } else {
                 while(index++ < position){
                     previous = current;
@@ -46,7 +46,7 @@ function LinkedList() {
                 previous.next = node
             }
 
-            this.length++;
+            length++;
             return true;
         } else {
             return false;
@@ -54,13 +54,13 @@ function LinkedList() {
     }
 
     this.removeAt = function (position) {
-        if (position > -1 && position < this.length) {
-            var current = this.head,
+        if (position > -1 && position < length) {
+            var current = head,
                 previous,
                 index = 0;
 
             if (position === 0) {
-                this.head = current.next;
+                head = current.next;
             } else {
                 while (index++ < position) {
                     previous = current;
@@ -69,7 +69,7 @@ function LinkedList() {
 
                 previous.next = current.next
             }
-            this.length--;
+            length--;
 
             return current.element;
         } else {
@@ -84,11 +84,11 @@ function LinkedList() {
     }
 
     this.getHead = function (){
-        return this.head.element;
+        return head.element;
     }
 
     this.getElement = function (position){
-        var current = this.head;
+        var current = head;
 
         if (position >= 0 && position < this.size()) {
             for(var index = 0; index <= position; index++){
@@ -104,7 +104,7 @@ function LinkedList() {
     }
 
     this.indexOf = function (element) {
-        var current = this.head,
+        var current = head,
         index = 0;
 
         while(current) {
@@ -120,15 +120,15 @@ function LinkedList() {
     }
 
     this.isEmpty = function () {
-        return this.length === 0;
+        return length === 0;
     }
 
     this.size = function () {
-        return this.length;
+        return length;
     }
 
     this.toString = function () {
-        var current = this.head,
+        var current = head,
             string = "";
 
         while (current) {

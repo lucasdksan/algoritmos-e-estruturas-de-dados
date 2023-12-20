@@ -65,12 +65,12 @@ Aqui estão alguns conceitos-chave relacionados a listas ligadas:
 
 7. Travessia (Traversal): Percorrer todos os nós da lista, geralmente usando loops ou recursão.
 
-*Vantagens das Listas Ligadas:*
+**Vantagens das Listas Ligadas:**
 
 Inserções e remoções podem ser eficientes, especialmente em comparação com arrays, onde as operações podem exigir realocação de memória.
 Não é necessário especificar o tamanho da lista antecipadamente.
 
-*Desvantagens das Listas Ligadas:*
+**Desvantagens das Listas Ligadas:**
 
 Acesso aos elementos é menos eficiente do que em arrays, pois requer percorrer a lista.
 Ocupam mais espaço na memória devido aos ponteiros adicionais.
@@ -79,7 +79,7 @@ Ocupam mais espaço na memória devido aos ponteiros adicionais.
 
 Uma lista duplamente ligada é uma estrutura de dados que consiste em elementos chamados nós, onde cada nó contém dados e duas referências (ponteiros) que apontam para o nó anterior e o próximo na sequência. Essa característica bidirecional oferece vantagens em termos de manipulação eficiente da lista em comparação com listas simplesmente ligadas.
 
-*Características Principais:*
+**Características Principais:**
 
 1. Nós Duplamente Ligados:
 
@@ -103,7 +103,7 @@ Uma lista duplamente ligada é uma estrutura de dados que consiste em elementos 
 * Embora as listas duplamente ligadas usem mais memória devido aos ponteiros adicionais, elas proporcionam uma flexibilidade significativa em termos de manipulação de elementos.
 * A capacidade de acessar elementos em ambas as direções pode superar a desvantagem de uso de memória em determinados contextos.
 
-*Operações Comuns em Listas Duplamente Ligadas:*
+**Operações Comuns em Listas Duplamente Ligadas:**
 
 1. Inserção:
 
@@ -121,7 +121,7 @@ Uma lista duplamente ligada é uma estrutura de dados que consiste em elementos 
 
 * A pesquisa em uma lista duplamente ligada pode ser mais eficiente em comparação com uma lista simplesmente ligada, especialmente quando se trata de pesquisas reversas.
 
-*Desvantagens:*
+**Desvantagens:**
 
 1. Uso de Memória:
 
@@ -132,3 +132,34 @@ Uma lista duplamente ligada é uma estrutura de dados que consiste em elementos 
 * A implementação e manutenção de listas duplamente ligadas podem ser mais complexas do que listas simplesmente ligadas devido à necessidade de gerenciar dois ponteiros para cada nó.
 
 Em resumo, as listas duplamente ligadas oferecem eficiência em termos de inserção, remoção e navegação bidirecional, mas essa eficiência vem com o custo de um maior consumo de memória e complexidade na implementação. A escolha entre listas simplesmente e duplamente ligadas depende das necessidades específicas do problema e das operações frequentemente realizadas na estrutura de dados.
+
+## Conjuntos 🛗
+
+Em ciência da computação, um conjunto é uma estrutura de dados que armazena elementos sem repetição e não possui uma ordem específica. Conjuntos são amplamente utilizados em algoritmos e estruturas de dados devido à sua eficiência na execução de operações fundamentais, como inserção, remoção e verificação de pertencimento, em tempo constante ou próximo a isso.
+
+**Aqui estão algumas operações comuns em conjuntos e suas descrições:**
+
+    1. Inserção: Adiciona um elemento ao conjunto. Se o elemento já estiver presente, a operação não tem efeito.
+
+    2. Remoção: Remove um elemento do conjunto, se estiver presente. Se o elemento não estiver no conjunto, a operação não tem efeito.
+
+    3. Pertencimento: Verifica se um elemento está presente no conjunto. Esta operação é executada em tempo constante na maioria das implementações.
+
+    4. União: Cria um novo conjunto que contém todos os elementos presentes nos conjuntos originais. Nenhum elemento é duplicado.
+
+    5. Interseção: Cria um novo conjunto que contém apenas os elementos que estão presentes em ambos os conjuntos originais.
+
+    6. Diferença: Cria um novo conjunto que contém os elementos presentes no primeiro conjunto, mas não no segundo.
+
+    7. Subconjunto: Verifica se todos os elementos de um conjunto estão contidos em outro conjunto.
+
+Conjuntos podem ser implementados de várias maneiras, e a escolha da implementação depende das operações frequentemente realizadas e dos requisitos de desempenho. Algumas implementações comuns incluem:
+
+    1. Arrays ou Listas: Simplesmente armazenar elementos em uma estrutura de array ou lista, e realizar busca linear para verificar pertencimento. Isso pode ser eficiente para conjuntos pequenos, mas menos eficiente para conjuntos grandes devido à busca linear.
+
+    2. Árvores de Busca Binária: Manter os elementos em uma árvore de busca binária balanceada para realizar operações de inserção, remoção e pertencimento em tempo logarítmico.
+
+    3. Tabelas de Hash: Utilizar uma tabela de hash para armazenar elementos, permitindo acesso rápido e eficiente para operações de inserção, remoção e pertencimento em tempo constante na média.
+
+## Dicionário e hashes 📖
+
