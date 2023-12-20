@@ -163,3 +163,54 @@ Conjuntos podem ser implementados de várias maneiras, e a escolha da implementa
 
 ## Dicionário e hashes 📖
 
+Dicionários e tabelas hash são estruturas de dados fundamentais na ciência da computação, usadas para armazenar e recuperar informações de maneira eficiente. Ambas são tipos de coleções associativas, o que significa que permitem associar chaves a valores.
+
+### Dicionário
+
+Um dicionário, também conhecido como mapa ou tabela de símbolos, é uma estrutura de dados que mapeia chaves únicas para valores correspondentes. Cada chave em um dicionário deve ser única, e essa chave é usada para acessar ou modificar o valor associado a ela. Os dicionários são implementados em várias linguagens de programação com diferentes nomes, como "dict" em Python, "HashMap" em Java e "unordered_map" em C++.
+
+Principais características dos dicionários:
+
+1. Eficiência na Busca:
+
+Os dicionários são projetados para fornecer acesso eficiente aos valores com base em suas chaves. Em geral, a busca, inserção e remoção de elementos em um dicionário têm complexidade média de tempo próxima a O(1) em casos ideais.
+
+2. Chaves Únicas:
+
+Cada chave em um dicionário deve ser única. Isso garante que cada valor esteja associado a uma chave específica, facilitando a busca e a manipulação de dados.
+
+3. Flexibilidade de Tipos:
+
+Dicionários geralmente suportam associações de chaves e valores de vários tipos. Isso proporciona flexibilidade ao trabalhar com diferentes tipos de dados.
+
+4. Dicionários em Linguagens Populares:
+
+ * Python: dict
+ * Java: HashMap
+ * C++: std::unordered_map
+ * JavaScript: Objetos literais ({})
+
+### Hashes
+
+Uma tabela hash é uma estrutura de dados que utiliza uma função de hash para mapear chaves para índices em uma tabela. Essa técnica é eficiente para busca, inserção e remoção de elementos. A função de hash transforma a chave em um índice, onde o valor associado à chave pode ser encontrado.
+
+Principais características das tabelas hash:
+
+1. Função de Hash:
+
+A função de hash é crucial para o desempenho da tabela hash. Ela transforma a chave em um índice na tabela. Uma boa função de hash distribui as chaves de forma uniforme para evitar colisões.
+
+2. Colisões:
+
+Colisões ocorrem quando duas chaves diferentes produzem o mesmo índice após a aplicação da função de hash. Existem várias técnicas para lidar com colisões, como encadeamento separado e endereçamento aberto.
+
+3. Eficiência Média de Tempo:
+
+Em média, a busca, inserção e remoção em uma tabela hash têm complexidade de tempo O(1) se a função de hash for bem projetada e as colisões forem tratadas eficientemente.
+
+4. Tabelas Hash em Linguagens Populares:
+
+ * Python: dict
+ * Java: HashMap
+ * C++: std::unordered_map
+ * JavaScript: Objetos literais ({})
