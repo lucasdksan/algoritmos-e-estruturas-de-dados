@@ -84,7 +84,7 @@ function LinkedList() {
     }
 
     this.getHead = function (){
-        return head.element;
+        return head;
     }
 
     this.getElement = function (position){

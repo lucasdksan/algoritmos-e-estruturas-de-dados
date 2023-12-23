@@ -84,7 +84,7 @@ function LinkedList() {
     }
 
     this.getHead = function (){
-        return head.element;
+        return head;
     }
 
     this.getElement = function (position){
@@ -156,10 +156,15 @@ function HashTable(){
         }
     }
 
-    // this.put = function(key, value){
-    //     var position = losoloseHashCode(key);
-    //     table[position] = value;
-    // }
+    var losoloseHashCode = function(key){
+        var hash = 0;
+
+        for(var i = 0; i < key.length; i++){
+            hash += key.charCodeAt(i);
+        }
+
+        return hash % 37;
+    }
 
     this.put = function (key, value) { 
         var position = losoloseHashCode(key);
@@ -172,25 +177,63 @@ function HashTable(){
     }
 
     this.remove = function(key){
-        table[losoloseHashCode(key)] = undefined;
+        var position = losoloseHashCode(key);
+
+        if(table[position] !== undefined){
+            var current = table[position].getHead();
+
+            while(current.next){
+                if(current.element.key === key){
+                    table[position].remove(current.element);
+
+                    if(table[position].isEmpty()){
+                        table[position] = undefined;
+                    }
+
+                    return true;
+                }
+
+                current = current.next;
+            }
+
+            if(current.element.key === key){
+                table[position].remove(current.element);
+
+                if(table[position].isEmpty()){
+                    table[position] = undefined;
+                }
+
+                return true;
+            }
+        }
+
+        return false;
     }
 
     this.get = function(key){
-        return table[losoloseHashCode(key)];
+        var position = losoloseHashCode(key);
+
+        if(table[position] !== undefined){
+            var current = table[position].getHead();
+
+            while(current.next){
+                if(current.element.key === key){
+                    return current.element.value;
+                }
+
+                current = current.next;
+            }
+
+            if(current.element.key === key){
+                return current.element.value;
+            }
+        }
+
+        return undefined;
     }
 
     this.console_log = function(){
         console.log(table);
-    }
-
-    var losoloseHashCode = function(key){
-        var hash = 0;
-
-        for(var i = 0; i < key.length; i++){
-            hash += key.charCodeAt(i);
-        }
-
-        return hash % 37;
     }   
 }
 
