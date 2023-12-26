@@ -139,27 +139,27 @@ Em ciência da computação, um conjunto é uma estrutura de dados que armazena 
 
 **Aqui estão algumas operações comuns em conjuntos e suas descrições:**
 
-    1. Inserção: Adiciona um elemento ao conjunto. Se o elemento já estiver presente, a operação não tem efeito.
+1. Inserção: Adiciona um elemento ao conjunto. Se o elemento já estiver presente, a operação não tem efeito.
 
-    2. Remoção: Remove um elemento do conjunto, se estiver presente. Se o elemento não estiver no conjunto, a operação não tem efeito.
+2. Remoção: Remove um elemento do conjunto, se estiver presente. Se o elemento não estiver no conjunto, a operação não tem efeito.
 
-    3. Pertencimento: Verifica se um elemento está presente no conjunto. Esta operação é executada em tempo constante na maioria das implementações.
+3. Pertencimento: Verifica se um elemento está presente no conjunto. Esta operação é executada em tempo constante na maioria das implementações.
 
-    4. União: Cria um novo conjunto que contém todos os elementos presentes nos conjuntos originais. Nenhum elemento é duplicado.
+4. União: Cria um novo conjunto que contém todos os elementos presentes nos conjuntos originais. Nenhum elemento é duplicado.
 
-    5. Interseção: Cria um novo conjunto que contém apenas os elementos que estão presentes em ambos os conjuntos originais.
+5. Interseção: Cria um novo conjunto que contém apenas os elementos que estão presentes em ambos os conjuntos originais.
 
-    6. Diferença: Cria um novo conjunto que contém os elementos presentes no primeiro conjunto, mas não no segundo.
+6. Diferença: Cria um novo conjunto que contém os elementos presentes no primeiro conjunto, mas não no segundo.
 
-    7. Subconjunto: Verifica se todos os elementos de um conjunto estão contidos em outro conjunto.
+7. Subconjunto: Verifica se todos os elementos de um conjunto estão contidos em outro conjunto.
 
 Conjuntos podem ser implementados de várias maneiras, e a escolha da implementação depende das operações frequentemente realizadas e dos requisitos de desempenho. Algumas implementações comuns incluem:
 
-    1. Arrays ou Listas: Simplesmente armazenar elementos em uma estrutura de array ou lista, e realizar busca linear para verificar pertencimento. Isso pode ser eficiente para conjuntos pequenos, mas menos eficiente para conjuntos grandes devido à busca linear.
+1. Arrays ou Listas: Simplesmente armazenar elementos em uma estrutura de array ou lista, e realizar busca linear para verificar pertencimento. Isso pode ser eficiente para conjuntos pequenos, mas menos eficiente para conjuntos grandes devido à busca linear.
 
-    2. Árvores de Busca Binária: Manter os elementos em uma árvore de busca binária balanceada para realizar operações de inserção, remoção e pertencimento em tempo logarítmico.
+2. Árvores de Busca Binária: Manter os elementos em uma árvore de busca binária balanceada para realizar operações de inserção, remoção e pertencimento em tempo logarítmico.
 
-    3. Tabelas de Hash: Utilizar uma tabela de hash para armazenar elementos, permitindo acesso rápido e eficiente para operações de inserção, remoção e pertencimento em tempo constante na média.
+3. Tabelas de Hash: Utilizar uma tabela de hash para armazenar elementos, permitindo acesso rápido e eficiente para operações de inserção, remoção e pertencimento em tempo constante na média.
 
 ## Dicionário e hashes 📖
 
@@ -214,3 +214,49 @@ Em média, a busca, inserção e remoção em uma tabela hash têm complexidade 
  * Java: HashMap
  * C++: std::unordered_map
  * JavaScript: Objetos literais ({})
+
+### Árvores de Busca Binária (BST) 🌲
+
+Árvores de Busca Binária (BST, do inglês Binary Search Tree) são estruturas de dados fundamentais na ciência da computação, utilizadas para organizar e buscar dados de maneira eficiente. Elas pertencem à categoria de árvores binárias, onde cada nó tem no máximo dois filhos: um à esquerda e outro à direita. A propriedade chave das BSTs é que, para cada nó, todos os elementos na subárvore à esquerda têm valores menores que o nó e todos os elementos na subárvore à direita têm valores maiores.
+
+Vamos explorar alguns conceitos-chave relacionados a árvores de busca binária:
+
+1 Inserção:
+
+Ao inserir um novo elemento em uma BST, o algoritmo compara o valor a ser inserido com o valor do nó atual.
+Se for menor, a inserção ocorre na subárvore à esquerda; se for maior, ocorre na subárvore à direita.
+O processo é repetido até encontrar um local vazio (um nó folha) onde o novo elemento pode ser adicionado.
+
+2 Busca:
+
+A busca em uma BST é eficiente devido à sua estrutura ordenada.
+Começa no nó raiz e compara o valor buscado com o valor do nó atual.
+Com base na comparação, a busca continua na subárvore à esquerda ou à direita até encontrar o elemento desejado ou atingir uma folha.
+
+3 Remoção:
+
+A remoção de um elemento em uma BST envolve três casos: nó sem filhos, nó com um filho, e nó com dois filhos.
+Para o caso de dois filhos, pode-se substituir o nó a ser removido pelo menor elemento da subárvore à direita ou pelo maior da subárvore à esquerda.
+
+4 Travessias:
+
+Existem várias formas de percorrer uma árvore de busca binária: pré-ordem, em ordem e pós-ordem.
+Em uma travessia em ordem, os elementos são visitados em ordem crescente.
+
+5 Complexidade de Tempo:
+
+A complexidade de tempo para operações em uma BST depende da altura da árvore.
+Em uma BST balanceada, a altura é logarítmica em relação ao número de elementos, garantindo operações eficientes.
+No pior caso (BST desbalanceada), a altura pode ser linear, levando a operações menos eficientes.
+
+6 Balanceamento:
+
+O balanceamento de uma BST é crucial para garantir uma altura logarítmica, o que mantém as operações eficientes.
+Árvores balanceadas, como AVL e Red-Black Trees, são variações de árvores de busca binária que mantêm automaticamente o equilíbrio.
+
+7 Aplicações:
+
+BSTs são amplamente utilizadas em bancos de dados para otimizar operações de busca.
+São fundamentais em algoritmos de ordenação, como o algoritmo de ordenação em árvore (Tree Sort).
+
+Em resumo, as árvores de busca binária oferecem uma estrutura eficiente para armazenar, buscar e organizar dados, mas é crucial garantir o balanceamento para manter a eficiência em operações. Existem várias variações e aprimoramentos das BSTs, dependendo dos requisitos específicos de cada aplicação.

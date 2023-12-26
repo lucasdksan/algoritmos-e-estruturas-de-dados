@@ -1,8 +1,10 @@
-function BinarySearchTree() {
+function BinarySearchTreeAVL() {
     var Node = function (key) {
         this.key = key;
         this.left = null;
         this.right = null;
+        this.height = 0;
+        this.fb = 0;
     }
 
     var root = null;
@@ -168,7 +170,7 @@ function BinarySearchTree() {
     }
 }
 
-const tree = new BinarySearchTree();
+const tree = new BinarySearchTreeAVL();
 
 const arr = [54, 91, 16, 54, 67, 1, 6, 26, 65, 90, 3, 65, 79, 11, 28, 102];
 
