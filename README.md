@@ -221,42 +221,119 @@ Em média, a busca, inserção e remoção em uma tabela hash têm complexidade 
 
 Vamos explorar alguns conceitos-chave relacionados a árvores de busca binária:
 
-1 Inserção:
+1. Inserção:
 
 Ao inserir um novo elemento em uma BST, o algoritmo compara o valor a ser inserido com o valor do nó atual.
 Se for menor, a inserção ocorre na subárvore à esquerda; se for maior, ocorre na subárvore à direita.
 O processo é repetido até encontrar um local vazio (um nó folha) onde o novo elemento pode ser adicionado.
 
-2 Busca:
+2. Busca:
 
 A busca em uma BST é eficiente devido à sua estrutura ordenada.
 Começa no nó raiz e compara o valor buscado com o valor do nó atual.
 Com base na comparação, a busca continua na subárvore à esquerda ou à direita até encontrar o elemento desejado ou atingir uma folha.
 
-3 Remoção:
+3. Remoção:
 
 A remoção de um elemento em uma BST envolve três casos: nó sem filhos, nó com um filho, e nó com dois filhos.
 Para o caso de dois filhos, pode-se substituir o nó a ser removido pelo menor elemento da subárvore à direita ou pelo maior da subárvore à esquerda.
 
-4 Travessias:
+4. Travessias:
 
 Existem várias formas de percorrer uma árvore de busca binária: pré-ordem, em ordem e pós-ordem.
 Em uma travessia em ordem, os elementos são visitados em ordem crescente.
 
-5 Complexidade de Tempo:
+5. Complexidade de Tempo:
 
 A complexidade de tempo para operações em uma BST depende da altura da árvore.
 Em uma BST balanceada, a altura é logarítmica em relação ao número de elementos, garantindo operações eficientes.
 No pior caso (BST desbalanceada), a altura pode ser linear, levando a operações menos eficientes.
 
-6 Balanceamento:
+6. Balanceamento:
 
 O balanceamento de uma BST é crucial para garantir uma altura logarítmica, o que mantém as operações eficientes.
 Árvores balanceadas, como AVL e Red-Black Trees, são variações de árvores de busca binária que mantêm automaticamente o equilíbrio.
 
-7 Aplicações:
+7. Aplicações:
 
 BSTs são amplamente utilizadas em bancos de dados para otimizar operações de busca.
 São fundamentais em algoritmos de ordenação, como o algoritmo de ordenação em árvore (Tree Sort).
 
 Em resumo, as árvores de busca binária oferecem uma estrutura eficiente para armazenar, buscar e organizar dados, mas é crucial garantir o balanceamento para manter a eficiência em operações. Existem várias variações e aprimoramentos das BSTs, dependendo dos requisitos específicos de cada aplicação.
+
+### Árvores de Busca Binária AVL (BST) 🌲
+
+
+### Grafos 🧬
+
+Grafos são estruturas de dados fundamentais em ciência da computação que modelam relações entre objetos. Eles consistem em um conjunto de vértices (também chamados de nós) e um conjunto de arestas que conectam esses vértices. Os grafos são amplamente utilizados para representar uma variedade de problemas do mundo real, como redes sociais, sistemas de transporte, mapas, circuitos elétricos, entre outros.
+
+Existem diferentes tipos de grafos, e eles podem ser classificados de acordo com diversas características. Alguns conceitos importantes relacionados a grafos incluem:
+
+Direcionamento:
+
+1 Grafo Direcionado (Digrafo): As arestas têm uma direção, indicando a relação de uma forma específica. Por exemplo, em uma rede social, uma aresta de A para B pode representar "A segue B", mas a aresta de B para A pode não existir ou ter um significado diferente.
+Grafo Não Direcionado: As arestas não têm direção, representando uma relação simétrica entre os vértices. Se existe uma aresta entre A e B, também existe entre B e A, sem distinção de direção.
+
+2. Ponderação:
+
+Grafo Ponderado: A cada aresta é atribuído um peso ou custo, refletindo a quantidade de recursos necessários para atravessá-la. Por exemplo, em uma rede rodoviária, os pesos podem representar distâncias ou tempo de viagem.
+
+3. Conectividade:
+
+Grafo Conectado: Existe um caminho entre cada par de vértices.
+Grafo Desconectado: Pode haver vértices isolados ou grupos de vértices sem caminho entre eles.
+
+4. Ciclicidade:
+
+Grafo Acíclico: Não possui ciclos, ou seja, não é possível percorrer um caminho fechado começando e terminando no mesmo vértice.
+Grafo Cíclico: Contém pelo menos um ciclo.
+A representação de grafos pode ser feita de várias maneiras, sendo duas das mais comuns a matriz de adjacência e a lista de adjacência.
+
+* Matriz de Adjacência:
+
+Cria uma matriz bidimensional onde o elemento (i, j) representa se há uma aresta entre os vértices i e j.
+É eficaz para grafos densos, onde a maioria dos pares de vértices é conectada.
+
+* Lista de Adjacência:
+
+Armazena uma lista para cada vértice, enumerando os vértices adjacentes a ele.
+É eficaz para grafos esparsos, onde apenas alguns pares de vértices são conectados.
+
+**Algoritmos em Grafos:**
+
+1. **Busca em Profundidade (DFS):**
+
+Explore o grafo o mais profundamente possível antes de retroceder.
+Pode ser usado para encontrar componentes fortemente conectados em digrafos.
+
+2. **Busca em Largura (BFS):**
+
+Explore o grafo em níveis, visitando todos os vizinhos de um vértice antes de passar para o próximo nível.
+Pode ser usado para encontrar o caminho mínimo em um grafo ponderado não direcionado.
+
+3. **Algoritmo de Dijkstra:**
+
+Encontra o caminho mais curto entre dois vértices em um grafo ponderado com arestas não negativas.
+
+4. **Algoritmo de Bellman-Ford:**
+
+Encontra o caminho mais curto entre dois vértices em um grafo ponderado, mesmo quando há arestas com peso negativo.
+
+5. **Algoritmo de Kruskal:**
+
+Encontra a árvore geradora mínima de um grafo não direcionado e ponderado.
+
+6. **Algoritmo de Prim:**
+
+Encontra a árvore geradora mínima de um grafo não direcionado e ponderado.
+
+7. **Algoritmo de Floyd-Warshall:**
+
+Encontra todos os caminhos mais curtos entre todos os pares de vértices em um grafo ponderado, incluindo arestas negativas.
+
+8. **Algoritmo Topológico:**
+
+Utilizado em digrafos acíclicos para ordenar os vértices de tal forma que todas as arestas vão de vértices com índice menor para índice maior.
+
+Grafos e seus algoritmos têm aplicações em diversas áreas, desde redes de computadores até bioinformática, passando por logística, jogos e muitas outras. O estudo aprofundado desses conceitos é essencial para compreender e resolver problemas complexos que envolvem relações entre entidades.

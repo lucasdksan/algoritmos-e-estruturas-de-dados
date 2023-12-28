@@ -104,23 +104,23 @@ function BinarySearchTreeAVL() {
     }
 
     var inOrderTraverseNode = function (node, callback) {
-        if(node !== null){
+        if (node !== null) {
             inOrderTraverseNode(node.left, callback);
             callback(node.key);
             inOrderTraverseNode(node.right, callback);
         }
     }
 
-    var preOrderTraverseNode = function(node, callback){
-        if(node !== null){
+    var preOrderTraverseNode = function (node, callback) {
+        if (node !== null) {
             callback(node.key);
             preOrderTraverseNode(node.left, callback);
             preOrderTraverseNode(node.right, callback);
         }
     }
 
-    var posOrderTraverseNode = function(node, callback){
-        if(node !== null){
+    var posOrderTraverseNode = function (node, callback) {
+        if (node !== null) {
             posOrderTraverseNode(node, callback);
             posOrderTraverseNode(node, callback);
             callback(node.key);
