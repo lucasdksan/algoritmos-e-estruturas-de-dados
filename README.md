@@ -337,3 +337,39 @@ Encontra todos os caminhos mais curtos entre todos os pares de vértices em um g
 Utilizado em digrafos acíclicos para ordenar os vértices de tal forma que todas as arestas vão de vértices com índice menor para índice maior.
 
 Grafos e seus algoritmos têm aplicações em diversas áreas, desde redes de computadores até bioinformática, passando por logística, jogos e muitas outras. O estudo aprofundado desses conceitos é essencial para compreender e resolver problemas complexos que envolvem relações entre entidades.
+
+## Ordenação
+
+
+Os métodos de ordenação são algoritmos utilizados para organizar um conjunto de elementos em uma determinada ordem. A eficiência desses algoritmos pode variar com base no tamanho do conjunto de dados, a distribuição dos valores e outros fatores. Aqui estão alguns dos métodos de ordenação mais comuns:
+
+**Bubble Sort (Ordenação por Bolha):**
+
+É um dos algoritmos mais simples.
+Percorre a lista diversas vezes, comparando elementos adjacentes e trocando-os se estiverem na ordem errada.
+Possui uma complexidade de tempo de O(n^2), onde n é o número de elementos.
+
+**Insertion Sort (Ordenação por Inserção):**
+
+Percorre a lista e insere cada elemento na posição correta.
+É eficiente para conjuntos pequenos.
+Sua complexidade de tempo é O(n^2) no pior caso.
+
+**Selection Sort (Ordenação por Seleção):**
+
+Encontra o menor elemento e o coloca na posição correta.
+Repete esse processo para o restante da lista.
+Assim como o Bubble Sort e o Insertion Sort, tem complexidade de tempo O(n^2).
+
+**Merge Sort (Ordenação por Intercalação):**
+
+Utiliza uma abordagem de dividir para conquistar.
+Divide a lista em duas metades, ordena cada metade e depois mescla as partes ordenadas.
+Sua complexidade de tempo é O(n log n), sendo mais eficiente para conjuntos de dados grandes.
+
+**Quick Sort (Ordenação Rápida):**
+
+Também utiliza a abordagem de dividir para conquistar.
+Escolhe um elemento pivô e organiza os outros elementos em torno dele.
+Recursivamente aplica o mesmo processo nas sub-listas.
+A complexidade de tempo média é O(n log n), mas pode degradar para O(n^2) no pior caso.
